@@ -25,6 +25,7 @@ main{
     display: none;
     text-align: center;
     margin: 3rem;
+    overflow: scroll;
 }
 .check-option{
     margin-left: 1rem;
@@ -58,4 +59,11 @@ main{
 
 #close{
     border: 2px solid;
+}
+
+.food-item-in-cart{
+    display: flex;
+}
+.change-quantity{
+    height: 33%;
 }
