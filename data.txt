@@ -1,0 +1,12 @@
+I log in as this user
+show my wallet amount
+and allow me to click what I want to order (call to the end point to show the foods) display on screen
+as I click options, update my wallet, show a cart total, when viewing cart I can see what is in it and the total
+only let me order if I can afford it
+
+login form based off a username that is in the users db
+only click login if input is valid / filled
+
+cart options with different sizes, change the price to +$1
+
+using materialize css

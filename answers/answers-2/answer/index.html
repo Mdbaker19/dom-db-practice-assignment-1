@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Food Order App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<nav class="after">
+    <p id="currentUser"></p>
+    <p id="wallet"></p>
+    <a class="waves-effect btn modal-trigger" id="login-modal-button" href="#login-modal">Login</a>
+    <p id="noUserFound">No user found with UserName: <span id="noUNFound"></span></p>
+    <a class="waves-effect btn modal-trigger" id="cart" href="#cart-modal">Cart</a>
+</nav>
+
+
+<div id="login-modal" class="modal">
+    <button id="close" class="right modal-close waves-effect waves-green btn-flat">Close</button>
+    <div class="modal-content">
+        <div class="input-field col s6">
+            <input id="userName" type="text" class="validate">
+            <label for="userName">UserName</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button id="login" class="modal-close waves-effect waves-green btn-flat">Login</button>
+    </div>
+</div>
+
+<div id="cart-modal" class="modal">
+    <button id="closeCart" class="right modal-close waves-effect waves-green btn-flat">Close</button>
+    <div class="modal-content">
+        <div class="input-field col s6">
+            <h1>Your total is: ...</h1>
+            <h1>Your cart contains:</h1>
+            <div id="cart-content">
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button id="order" class="modal-close waves-effect waves-green btn-flat">Order</button>
+    </div>
+</div>
+
+
+<div id="load">
+    <h1>Loading...</h1>
+</div>
+
+<main class="after">
+    <div id="foods">
+    </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function (){
+        $('.modal').modal();
+    });
+</script>
+<script src="calls.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

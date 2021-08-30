@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #282B28;
+    color: #83BCA9;
+}
+
+nav{
+    height: 10vh;
+    background: revert;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main{
+    height: 70vh;
+}
+
+.after{
+    display: none;
+    text-align: center;
+    margin: 3rem;
+}
+.check-option{
+    margin-left: 1rem;
+    margin-top: .5rem;
+}
+.order-item{
+    padding: .5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    box-shadow: #83BCA9 0 0 9px 0;
+    display: none;
+}
+
+.food-card{
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: 2rem 5vw;
+    padding: 3rem;
+}
+#please-log-in{
+    display: none;
+}
+#noUserFound{
+    display: none;
+}
+#load{
+    position: absolute;
+    top: 20vh;
+    left: 40vw;
+}
+
+#close{
+    border: 2px solid;
+}
