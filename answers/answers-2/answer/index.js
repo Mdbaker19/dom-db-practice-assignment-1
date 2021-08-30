@@ -83,7 +83,10 @@
             alert("User name can not be blank");
             return;
         }
-        let userAttempt = validateUserName(un);
+        logInSuccessful(validateUserName(un));
+    });
+
+    function logInSuccessful(userAttempt){
         if(userAttempt.length === 1){
             user = userAttempt[0];
             $("#login-modal-button").hide();
@@ -98,7 +101,8 @@
             $("#noUserFound").show();
             $("#noUNFound").text(un);
         }
-    })
+    }
+
     function validateUserName(userName){
         // check the users obj for existence of the username
         return users.filter(user => user.name.toLowerCase() === userName.toLowerCase());
@@ -153,12 +157,15 @@
     });
 
     function showCartContent(cartData) {
-        cartData = reduceCartData(cartData);
         return `<div id="cart-items">
-                    ${cartData}
+                    ${reduceCartData(cartData)}
                 </div>`;
     }
 
+    // convert the multiple instances of a given item in the cart, salad, salad, salad
+    // to be 3 salad and append the price of 3 of them with it
+    // filter ran first to create the 3 salad but also makes 3 salad, 3 times
+    // so filtered with a set and looped through after
     function reduceCartData(cartData) {
         let countedItems = cartData.map(item => {
             return cartData.filter(i => item === i).length + " " + item;
@@ -186,6 +193,7 @@
         return amount * price;
     }
 
+    // update cart quantities grab the values and if you clicked + or minus, handle accordingly
     body.on("click", ".change-quantity", (e) => {
         let tgt = e.currentTarget;
         let op = tgt.innerText;
@@ -193,7 +201,10 @@
         op === "+" ? quantity++ : quantity--;
         tgt.parentElement.children[0].innerText = handleItemChange(quantity, item);
         console.log(quantity, item);
+
+
         console.log(order);
+        // the current order arr needs updating too
     });
 
     function handleItemChange(newQuantity, item) {
